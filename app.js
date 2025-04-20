@@ -28,10 +28,10 @@ app.use(helmet());
 app.use(limiter);
 
 app.use((req, res, next) => {
-    if (req.headers.host === 'manjushamann.com') {
-      return res.redirect(301, 'https://www.manjushamann.com' + req.url);
+    const host = req.headers.host?.split(':')[0];
+    if (host === 'manjushamann.com') {
+        return res.redirect(301, 'https://www.manjushamann.com' + req.url);
     }
-    next();
 });  
 
 app.get("/", function (req, res) {
