@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://manjushamann.com/sitemap.xml

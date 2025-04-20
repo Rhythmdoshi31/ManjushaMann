@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="title" content="Manjusha Mann | Certified Tarot Reader & Healer">
+    <meta name="description" content="Explore your destiny with Manjusha Mann — Certified Tarot Master, Spell Caster, Reiki Healer & Numerologist. Book personalized tarot readings and get clarity on life, love, and more.">
+    <meta name="keywords" content="Tarot Reading, Astrologer, Astrology, Manjusha Mann, Tarot Reader India, Reiki Healing, Numerology, Spiritual Guidance, Tarot Card Reading, Online Tarot">
+    <meta name="author" content="Manjusha Mann">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FF4621" />
+    <link rel="icon" href="/images/logo.png" type="image/x-icon">
+    <link rel="canonical" href="https://yourdomain.com/" />
+    <title>Astrologer | Manjusha Mann</title>
+    <link href="/css/style.css" rel="stylesheet">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Shippori+Mincho&display=swap" rel="stylesheet">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Manjusha Mann | Certified Tarot Reader & Healer" />
+    <meta property="og:description" content="Explore your future with tarot readings, numerology and healing from Manjusha Mann." />
+    <meta property="og:image" content="https://manjushamann.com/images/logo.png" />
+    <meta property="og:url" content="https://manjushamann.com" />
+    <meta property="og:type" content="website" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Manjusha Mann | Certified Tarot Reader & Healer">
+    <meta name="twitter:description" content="Explore your future with tarot readings, numerology and healing from Manjusha Mann.">
+    <meta name="twitter:image" content="https://manjushamann.com/images/logo.png">
+    <meta name="twitter:url" content="https://manjushamann.com">
+
+</head>
+
+<body class="bg-[#FFEDD0]">
+    <header class="h-[9vh] bg-[#0B2027] w-full md:w-[50vw] md:mx-auto flex items-center justify-between px-6">
+        <div class="flex justify-center">
+            <img loading="lazy" src="./images/logo.png" alt="Something" class="object-cover h-12 w-12 mb-1">
+            <h5 class="text-xl font-grotesk pt-3 text-gray-100 font-semibold">Manjusha Mann</h5>
+        </div>
+        <div>
+            <a href="#readings" class="text-gray-100 text-4xl"><i class="ri-menu-3-fill"></i></a>
+        </div>
+    </header>
+
+    <div class="flex flex-col justify-center items-center mt-20 font-grotesk">
+        <h5 class="text-sm text-center p-1 font-semibold tracking-wide px-4 bg-opacity-50 h-fit w-fit bg-red-200 rounded-2xl text-[#CA5310]">Poet • Writer • Author • Social Scientist</h5>
+        <h1 class="text-center text-5xl font-mincho mt-8 mb-10 font-semibold">Manjusha <span class="text-orange-600">Mann</span></h1>
+        <h4 class="text-black text-center text-2xl">Certified Tarot Master, Tarot <br> Reader & Healer, Tarot Spell Master, Numerologist, Reiki Healer</h4>
+        
+        <div class="h-[22rem] w-[80%] md:w-[30vw] rounded-lg">
+            <img loading="lazy" src="./images/image.png" alt="Something" class="w-full h-full object-cover object-top rounded-xl" />
+        </div>    
+        <a href="#readings" class="bg-[#FF4621] text-white mt-4 text-2xl p-3 font-semibold tracking-wide text-center shadow-lg h-fit w-[78%] rounded-3xl md:w-[25vw]">Explore Your Destiny</a>        
+        <a href="#connect" class="border-[#FF4621] border-2 text-[#FF4621] mt-4 text-2xl p-3 font-semibold tracking-wide shadow-lg text-center h-fit w-[78%] rounded-3xl md:w-[25vw]">Follow The Stars</a>        
+    </div>
+
+
+    <section id="destiny" class="relative w-[75%] mx-auto overflow-hidden rounded-xl shadow-lg mt-20 md:w-[30vw] md:h-[50vh]">
+        <!-- Cards Wrapper -->
+        <div id="cards" class="flex transition-transform duration-500 ease-in-out" style="width: 300%">
+            <%let arr = ["./images/card1.jpeg", "./images/card2.jpeg", "./images/card3.jpeg"]%>
+            <!-- Card 1 -->
+          <%arr.forEach((card) => {%>
+            <div class="w-1/3 h-[50vh] flex-shrink-0 relative bg-gray-200">
+                <img loading="lazy" src="<%= card%>" alt="Something" class="absolute inset-0 w-full h-full object-cover object-bottom rounded-xl" />
+              </div>
+          <%})%>
+        </div>
+      
+        <!-- Arrows -->
+        <button id="prev" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black bg-opacity-60 p-1 text-white px-2 rounded-full text-2xl">
+          <i class="ri-arrow-left-s-line"></i>
+        </button>
+        <button id="next" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black bg-opacity-60 p-1 text-white px-2 rounded-full text-2xl">
+          <i class="ri-arrow-right-s-line"></i>
+        </button>
+      
+        <!-- Dots -->
+        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+          <button class="dot w-3 h-3 bg-gray-400 rounded-full transition duration-200"></button>
+          <button class="dot w-3 h-3 bg-gray-400 rounded-full transition duration-200"></button>
+          <button class="dot w-3 h-3 bg-gray-400 rounded-full transition duration-200"></button>
+        </div>
+    </section> 
+    
+    <section id="readings" class="h-full w-full flex flex-col justify-center items-center mt-14 mb-4 px-2 md:w-[40%] md:mx-auto">
+        <h1 class="text-4xl font-semibold text-center font-mincho">Featured Readings</h1>
+        <div class="mt-2 mb-8 bg-[#FF4621] h-[4px] w-[50%]"></div>
+      
+        <% let arr2 = [
+          { src: "./images/p1.jpeg", heading: "1 Yes/No Question", price: "51" },
+          { src: "./images/p2.webp", heading: "3 Yes/No Question", price: "121" },
+          { src: "./images/p3.webp", heading: "1 Question", price: "101" },
+          { src: "./images/p4.jpg", heading: "3 Question", price: "201" },
+          { src: "./images/p5.webp", heading: "15 Min Reading", price: "151" },
+          { src: "./images/p6.jpg", heading: "30 Min Reading", price: "251" },
+          { src: "./images/p7.jpeg", heading: "60 Min Reading", price: "501" }
+        ] %>
+      
+        <% arr2.forEach((card) => { %>
+          <div class="w-[90vw] h-[36vh] bg-white rounded-lg mb-8 overflow-hidden shadow-lg md:w-[36vw] md:h-[52vh]">
+            <div class="relative h-[70%] w-full bg-red-600 rounded-lg">
+              <img loading="lazy" src="<%= card.src %>" alt="Something" class="h-full w-full object-cover">
+            </div> 
+            <div class="w-full h-[30%] rounded-lg pl-3 pr-5 flex justify-between items-center">
+              <div>
+                <h1 class="text-xl font-semibold text-grotesk">•<%= card.heading %></h1>
+                <h1 class="text-xl font-semibold text-[#FF4621]">₹<%= card.price %></h1>
+              </div>
+              <a 
+              href="https://wa.me/<%= number %>?text=Hi%2C%20I%E2%80%99d%20like%20to%20book%20the%20%22<%= card.heading %>%22%20reading%20for%20%E2%82%B9<%= card.price %>.%0A%0A[ Please%20wait%20until%20the%20astrologer%20responds. ]"
+                target="_blank" 
+                class="flex items-center justify-center gap-1 p-2 px-3 bg-green-600 text-lg text-white rounded-3xl"
+              >
+                <i class="ri-whatsapp-line"></i>
+                <h1>Book Now</h1>
+              </a>
+            </div>
+          </div>
+        <% }) %>
+    </section>
+      
+
+    <section id="reviews" class="w-[90%] mx-auto text-center rounded-2xl p-6">
+        <h1 class="text-4xl font-semibold text-center font-mincho">What Our Customers Say</h1>
+        <div class="mt-2 mb-16 bg-[#FF4621] h-[4px] w-[50%] mx-auto"></div>
+        <div class="bg-[#0B2027] text-white p-6 mt-4 rounded-2xl shadow-2xl relative  md:w-[50%] mx-auto">
+          <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-[#FF4621] rounded-full w-12 h-12 flex items-center justify-center text-white text-2xl font-bold">
+            <i class="ri-double-quotes-l"></i>
+          </div>
+      
+          <div class="mt-4 text-yellow-400 flex justify-center space-x-1 text-lg">
+            <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+          </div>
+      
+          <p class="italic text-center text-xl tracking-wide font-mincho mt-4">
+            "Thank you so much ma'am for your insightful tarot reading... Your guidance came at a time when i truly needed it and has brought me much clarity.. I'm already seeing positive changes in my life thanks to your suggestions. Grateful for you wisdom and kindness.."
+          </p>
+      
+          <div class="flex flex-col items-center mt-6">
+            <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center overflow-hidden">
+              <img loading="lazy" src="./images/reviewer.jpeg" alt="Something" class="w-full h-full object-cover">
+            </div>
+            <p class="font-bold mt-2 font-grotesk text-lg">Divya Mudaliar</p>
+            <p class="text-[#FF4621] text-sm">Loyal Customer • Rawan</p>
+          </div>
+        </div>
+    </section>
+
+      <footer id="connect" class="mx-auto md:w-[50%] bg-[#0B2027] text-white rounded-tr-2xl rounded-tl-2xl shadow-md p-6 mt-8">
+        <h2 class="text-3xl font-bold mb-3 font-mincho tracking-wide">Connect With Me!</h2>
+        <div class="w-28 h-[2px] bg-[#FF4621] rounded-full mb-6"></div>
+      
+        <% let arr3 = [ 
+          {
+            icon: "ri-instagram-line text-2xl font-semibold",
+            text: "My Instagram",
+            href: "https://instagram.com/Tarot_reader_manjusha_mann",
+          },
+          {
+            icon: "ri-youtube-line text-2xl font-semibold",
+            text: "My YouTube",
+            href: "https://youtube.com/@TarotreaderManjushaMann",
+          },
+          {
+            icon: "ri-mail-line text-2xl font-semibold",
+            text: "manjusha.mann9@gmail.com",
+            href: "mailto:manjusha.mann9@gmail.com"
+          }
+        ] %>
+      
+        <% arr3.forEach((item) => { %>
+          <div class="flex items-center gap-4 mb-6">
+            <div class="bg-orange-100 text-[#FF4621] p-3 px-4 rounded-full">
+              <i class="<%= item.icon %>"></i>
+            </div>
+            <div>
+                <a 
+                  href="<%= item.href %>" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class=" hover:underline font-grotesk text-xl font-semibold tracking-wide"
+                >
+                  <%= item.text %>
+                </a>
+            </div>
+          </div>
+        <% }) %>  
+      
+        <hr class="mt-12">
+        <h1 class="font-grotesk text-center mt-16 mb-16">© 2025 . All rights reserved.</h1>  
+      </footer>
+      
+      
+
+    <script src="./js/cards.js" defer></script>
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "name": "Manjusha Mann",
+          "jobTitle": "Tarot Reader & Healer",
+          "url": "https://manjushamann.com",
+          "sameAs": [
+            "https://instagram.com/Tarot_reader_manjusha_mann",
+            "https://youtube.com/@TarotreaderManjushaMann"
+          ]
+        }
+    </script>
+        
+      
+</body>
+</html>
