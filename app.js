@@ -23,12 +23,25 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 app.use('/robots.txt', express.static('public/robots.txt'));
 app.use('/sitemap.xml', express.static('public/sitemap.xml'));
+app.set('trust proxy', 1);
 app.use(helmet());
 app.use(limiter);
+
+app.use((req, res, next) => {
+    if (req.headers.host === 'manjushamann.com') {
+      return res.redirect(301, 'https://www.manjushamann.com' + req.url);
+    }
+    next();
+});  
 
 app.get("/", function (req, res) {
     res.render("index", { number: process.env.NUMBER });
 })
+
+app.use((req, res) => {
+    res.status(404).send("This page is not available!");
+});
+
 
 app.listen(3000, () => {
     console.log("server started!")

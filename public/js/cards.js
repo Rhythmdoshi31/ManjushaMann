@@ -2,8 +2,8 @@
         const dots = document.querySelectorAll('.dot');
         const prev = document.getElementById('prev');
         const next = document.getElementById('next');
-        let currentIndex = 0;
-        let interval;
+        var currentIndex = 0;
+        var interval;
       
         function updateCarousel(index) {
           cards.style.transform = `translateX(-${index * 33.3333}%)`;

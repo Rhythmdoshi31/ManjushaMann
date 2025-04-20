@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#FF4621" />
     <link rel="icon" href="/images/logo.png" type="image/x-icon">
-    <link rel="canonical" href="https://manjushamann.com/" />
+    <link rel="canonical" href="https://www.manjushamann.com/" />
     <title>Astrologer | Manjusha Mann</title>
     <link href="/css/style.css" rel="stylesheet">
     <link
@@ -22,8 +22,8 @@
     <!-- Open Graph -->
     <meta property="og:title" content="Manjusha Mann | Certified Tarot Reader & Healer" />
     <meta property="og:description" content="Explore your future with tarot readings, numerology and healing from Manjusha Mann." />
-    <meta property="og:image" content="https://manjushamann.com/images/logo.png" />
-    <meta property="og:url" content="https://manjushamann.com" />
+    <meta property="og:image" content="https://www.manjushamann.com/images/logo.png" />
+    <meta property="og:url" content="https://www.manjushamann.com" />
     <meta property="og:type" content="website" />
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
@@ -51,7 +51,7 @@
         <h4 class="text-black text-center text-2xl">Certified Tarot Master, Tarot <br> Reader & Healer, Tarot Spell Master, Numerologist, Reiki Healer</h4>
         
         <div class="h-[22rem] w-[80%] md:w-[30vw] rounded-lg">
-            <img loading="lazy" src="./images/image.png" alt="Something" class="w-full h-full object-cover object-top rounded-xl" />
+            <img loading="lazy" src="./images/image.webp" alt="Something" class="w-full h-full object-cover object-top rounded-xl" />
         </div>    
         <a href="#readings" class="bg-[#FF4621] text-white mt-4 text-2xl p-3 font-semibold tracking-wide text-center shadow-lg h-fit w-[78%] rounded-3xl md:w-[25vw]">Explore Your Destiny</a>        
         <a href="#connect" class="border-[#FF4621] border-2 text-[#FF4621] mt-4 text-2xl p-3 font-semibold tracking-wide shadow-lg text-center h-fit w-[78%] rounded-3xl md:w-[25vw]">Follow The Stars</a>        
@@ -61,7 +61,7 @@
     <section id="destiny" class="relative w-[75%] mx-auto overflow-hidden rounded-xl shadow-lg mt-20 md:w-[30vw] md:h-[50vh]">
         <!-- Cards Wrapper -->
         <div id="cards" class="flex transition-transform duration-500 ease-in-out" style="width: 300%">
-            <%let arr = ["./images/card1.jpeg", "./images/card2.jpeg", "./images/card3.jpeg"]%>
+            <%var arr = ["./images/card1.webp", "./images/card2.webp", "./images/card3.webp"]%>
             <!-- Card 1 -->
           <%arr.forEach((card) => {%>
             <div class="w-1/3 h-[50vh] flex-shrink-0 relative bg-gray-200">
@@ -90,14 +90,14 @@
         <h1 class="text-4xl font-semibold text-center font-mincho">Featured Readings</h1>
         <div class="mt-2 mb-8 bg-[#FF4621] h-[4px] w-[50%]"></div>
       
-        <% let arr2 = [
-          { src: "./images/p1.jpeg", heading: "1 Yes/No Question", price: "51" },
+        <% var arr2 = [
+          { src: "./images/p1.webp", heading: "1 Yes/No Question", price: "51" },
           { src: "./images/p2.webp", heading: "3 Yes/No Question", price: "121" },
           { src: "./images/p3.webp", heading: "1 Question", price: "101" },
-          { src: "./images/p4.jpg", heading: "3 Question", price: "201" },
+          { src: "./images/p4.webp", heading: "3 Question", price: "201" },
           { src: "./images/p5.webp", heading: "15 Min Reading", price: "151" },
-          { src: "./images/p6.jpg", heading: "30 Min Reading", price: "251" },
-          { src: "./images/p7.jpeg", heading: "60 Min Reading", price: "501" }
+          { src: "./images/p6.webp", heading: "30 Min Reading", price: "251" },
+          { src: "./images/p7.webp", heading: "60 Min Reading", price: "501" }
         ] %>
       
         <% arr2.forEach((card) => { %>
@@ -142,7 +142,7 @@
       
           <div class="flex flex-col items-center mt-6">
             <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center overflow-hidden">
-              <img loading="lazy" src="./images/reviewer.jpeg" alt="Something" class="w-full h-full object-cover">
+              <img loading="lazy" src="./images/reviewer.webp" alt="Something" class="w-full h-full object-cover">
             </div>
             <p class="font-bold mt-2 font-grotesk text-lg">Divya Mudaliar</p>
             <p class="text-[#FF4621] text-sm">Loyal Customer • Rawan</p>
@@ -154,7 +154,7 @@
         <h2 class="text-3xl font-bold mb-3 font-mincho tracking-wide">Connect With Me!</h2>
         <div class="w-28 h-[2px] bg-[#FF4621] rounded-full mb-6"></div>
       
-        <% let arr3 = [ 
+        <% var arr3 = [ 
           {
             icon: "ri-instagram-line text-2xl font-semibold",
             text: "My Instagram",
