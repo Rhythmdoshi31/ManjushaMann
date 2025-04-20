@@ -32,9 +32,11 @@ app.use((req, res, next) => {
     if (host === 'manjushamann.com') {
         return res.redirect(301, 'https://www.manjushamann.com' + req.url);
     }
+    next();
 });  
 
 app.get("/", function (req, res) {
+    console.log("rendered");
     res.render("index", { number: process.env.NUMBER });
 })
 
