@@ -4,8 +4,11 @@ const path = require("path");
 require("dotenv").config();
 const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
+const connectDb = require("./config/mongoose-connection");
+const cookieParser = require('cookie-parser');
 
 const indexRouter = require("./routes/indexRouter");
+const adminRouter = require("./routes/adminRouter");
 
 // General rate limiter for all requests
 const limiter = rateLimit({
@@ -28,6 +31,21 @@ app.use('/sitemap.xml', express.static('public/sitemap.xml'));
 app.set('trust proxy', 1);
 app.use(helmet());
 app.use(limiter);
+app.use(cookieParser());
+connectDb();
+
+app.use(
+    helmet.contentSecurityPolicy({
+      directives: {
+        defaultSrc: ["'self'"],  // Default source for all content
+        scriptSrc: ["'self'", "'unsafe-inline'"],  // Allow inline scripts
+        styleSrc: ["'self'", "https://fonts.googleapis.com", "https://cdn.jsdelivr.net", "'unsafe-inline'"],  // Allow styles from self, Google Fonts, and jsDelivr
+        fontSrc: ["'self'", "https://fonts.gstatic.com", "https://cdn.jsdelivr.net"],  // Allow fonts from self, Google Fonts, and jsDelivr
+        imgSrc: ["'self'", "https://res.cloudinary.com"],  // Allow images from self and Cloudinary
+        mediaSrc: ["'self'", "https://res.cloudinary.com"],  // Allow media from Cloudinary
+      },
+    })
+  );
 
 app.use((req, res, next) => {
     const host = req.headers.host?.split(':')[0];
@@ -37,7 +55,8 @@ app.use((req, res, next) => {
     next();
 });  
 
-app.get("/", indexRouter);
+app.use("/", indexRouter);
+app.use("/admin", adminRouter);
 
 
 app.use((req, res) => {
