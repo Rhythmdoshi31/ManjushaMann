@@ -4,12 +4,13 @@ const router = express.Router();
 const { isLoggedIn } = require("../middlewares/isLoggedIn");
 const upload = require('../utils/multer');
 const adminModel = require("../models/adminModel");
+const { checkCookie } = require("../middlewares/checkCookie");
 
 router.get("/register", (req, res) => {
     res.send("This page is Restricted !");
 });
 
-router.get("/login", function (req, res) {
+router.get("/login", checkCookie, function (req, res) {
     res.render("admin_login");
 });
 

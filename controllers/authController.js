@@ -31,6 +31,7 @@ module.exports.loginUser = async function(req, res) {
     const { name, password } = req.body;  // input data nikalo.
     
     try {
+
         let user = await adminModel.findOne({ name });  // check if user exists or not.
 
         if (!user) {   // if user doesn't exist, return.
@@ -54,6 +55,7 @@ module.exports.loginUser = async function(req, res) {
     }
 
 };
+
 module.exports.logoutUser = function(req, res) {
     res.clearCookie("token");
     res.send("logged out successfully.");
