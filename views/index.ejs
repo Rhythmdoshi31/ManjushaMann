@@ -31,7 +31,26 @@
     <meta name="twitter:description" content="Explore your future with tarot readings, numerology and healing from Manjusha Mann.">
     <meta name="twitter:image" content="https://manjushamann.com/images/logo.png">
     <meta name="twitter:url" content="https://manjushamann.com">
-
+    <style>
+      @keyframes fadeInOut {
+        0% {
+          opacity: 0;
+        }
+        30% {
+          opacity: 1; /* Fade in quickly */
+        }
+        70% {
+          opacity: 1; /* Stay visible */
+        }
+        100% {
+          opacity: 0; /* Fade out at the same speed as fade-in */
+        }
+      }
+      
+      .fade-in-out {
+        animation: fadeInOut 4s ease-in-out infinite;
+      }
+      </style>      
 </head>
 
 <body class="bg-[#FFEDD0]">
@@ -123,11 +142,11 @@
         <% }) %>
     </section>
       
-
     <section id="reviews" class="w-[90%] mx-auto text-center rounded-2xl p-6">
         <h1 class="text-4xl font-semibold text-center font-mincho">What Our Customers Say</h1>
         <div class="mt-2 mb-16 bg-[#FF4621] h-[4px] w-[50%] mx-auto"></div>
-        <div class="bg-[#0B2027] text-white p-6 mt-4 rounded-2xl shadow-2xl relative  md:w-[50%] mx-auto">
+
+        <div id="okipullup" class="bg-[#0B2027] text-white p-6 mt-4 rounded-2xl shadow-2xl relative  md:w-[50%] mx-auto">
           <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-[#FF4621] rounded-full w-12 h-12 flex items-center justify-center text-white text-2xl font-bold">
             <i class="ri-double-quotes-l"></i>
           </div>
@@ -135,22 +154,23 @@
           <div class="mt-4 text-yellow-400 flex justify-center space-x-1 text-lg">
             <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
           </div>
-      
-          <p class="italic text-center text-xl tracking-wide font-mincho mt-4">
-            "Thank you so much ma'am for your insightful tarot reading... Your guidance came at a time when i truly needed it and has brought me much clarity.. I'm already seeing positive changes in my life thanks to your suggestions. Grateful for you wisdom and kindness.."
+          
+          <% let paras = ["Thank you so much ma'am for your insightful tarot reading... Your guidance came at a time when i truly needed it and has brought me much clarity.. I'm already seeing positive changes in my life thanks to your suggestions. Grateful for you wisdom and kindness..", "p2", "p3"] %>
+          <p id="reviewText" class="italic text-center text-xl tracking-wide font-mincho mt-4 fade-in-out">
+            Something Goes here...
           </p>
       
           <div class="flex flex-col items-center mt-6">
             <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center overflow-hidden">
-              <img loading="lazy" src="./images/reviewer.webp" alt="Something" class="w-full h-full object-cover">
+              <img id="reviewerImg" loading="lazy" src="./images/reviewer.webp" alt="Something" class="w-full h-full object-cover fade-in-out">
             </div>
-            <p class="font-bold mt-2 font-grotesk text-lg">Divya Mudaliar</p>
-            <p class="text-[#FF4621] text-sm">Loyal Customer • Rawan</p>
+            <p id="reviewerName" class="font-bold mt-2 font-grotesk text-lg fade-in-out">Divya Mudaliar</p>
+            <p class="text-[#FF4621] text-sm fade-in-out">Loyal Customer • <span id="loc">Rawan</span></p>
           </div>
         </div>
     </section>
 
-      <footer id="connect" class="mx-auto md:w-[50%] bg-[#0B2027] text-white rounded-tr-2xl rounded-tl-2xl shadow-md p-6 mt-8">
+    <footer id="connect" class="mx-auto md:w-[50%] bg-[#0B2027] text-white rounded-tr-2xl rounded-tl-2xl shadow-md p-6 mt-8">
         <h2 class="text-3xl font-bold mb-3 font-mincho tracking-wide">Connect With Me!</h2>
         <div class="w-28 h-[2px] bg-[#FF4621] rounded-full mb-6"></div>
       
@@ -192,10 +212,11 @@
       
         <hr class="mt-12">
         <h1 class="font-grotesk text-center mt-16 mb-16">© 2025 . All rights reserved.</h1>  
-      </footer>
+    </footer>
       
       
-
+      
+    <script src="./js/reviews.js" defer></script>
     <script src="./js/cards.js" defer></script>
     <script type="application/ld+json">
         {
