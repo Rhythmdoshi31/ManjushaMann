@@ -864,6 +864,10 @@ video {
   height: 90%;
 }
 
+.max-h-\[80\%\] {
+  max-height: 80%;
+}
+
 .min-h-\[45\%\] {
   min-height: 45%;
 }
@@ -1037,6 +1041,10 @@ video {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
 }
 
 .whitespace-nowrap {
