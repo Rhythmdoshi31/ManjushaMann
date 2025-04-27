@@ -5,6 +5,8 @@ require("dotenv").config();
 const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
 
+const indexRouter = require("./routes/indexRouter");
+
 // General rate limiter for all requests
 const limiter = rateLimit({
     windowMs: 10 * 60 * 1000, // 10 minutes
@@ -35,10 +37,8 @@ app.use((req, res, next) => {
     next();
 });  
 
-app.get("/", function (req, res) {
-    console.log("rendered");
-    res.render("index", { number: process.env.NUMBER });
-})
+app.get("/", indexRouter);
+
 
 app.use((req, res) => {
     res.status(404).send("This page is not available!");

@@ -50,6 +50,11 @@
       .fade-in-out {
         animation: fadeInOut 4s ease-in-out infinite;
       }
+      @keyframes pulseFast {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.6; color: rgb(255, 98, 0); }
+      }
+
       </style>      
 </head>
 
@@ -64,9 +69,29 @@
         </div>
     </header>
 
-    <div class="flex flex-col justify-center items-center mt-20 font-grotesk">
+    <div id="reel-container" class="hidden w-screen sm:w-[500px] h-screen flex items-center justify-center bg-black z-50 fixed top-0 left-0 sm:left-[calc(50%-250px)]">
+      <video id="video" src="./videos/video.mp4" class="w-full h-[90%] object-cover rounded-md" loop></video>
+      <h1 id="reel-close" class="absolute left-4 top-5 text-white text-4xl hover:text-[#6556cd] transition-colors cursor-pointer z-10">×</h1>
+      <h1 id="read" class="absolute top-4 right-[5%] border-[#FF4621] border-2 bg-[#FF4621] text-white text-xl p-2 font-semibold shadow-lg whitespace-nowrap text-center rounded-3xl">Read Horoscope</h1>
+      <div id="text-popup" class="fixed left-1/2 bottom-0 translate-x-[-50%] translate-y-full w-[95%] sm:w-[400px] bg-black text-white text-2xl text-center py-4 px-2 rounded-t-2xl transition-transform duration-500">
+        आज का दिन आपके लिए योजना बनाने और भविष्य के विकल्पों पर विचार करने का है। आप नए अवसरों और संभावनाओं की खोज में हैं। 
+
+यह समय है अपने लक्ष्यों को स्पष्ट करने का और यह सोचने का कि आप अपनी योजनाओं को कैसे आगे बढ़ा सकते हैं। आपकी दृष्टि स्पष्ट है, और आप अपने भविष्य के लिए विचारशील निर्णय लेने के लिए तैयार हैं। 
+
+कुल मिलाकर, आज का दिन निर्णय लेने और अपने लक्ष्यों के प्रति दृढ़ता से आगे बढ़ने का है। अपने विचारों पर ध्यान दें और उन अवसरों को पहचानें जो आपके सामने हैं। यह समय है अपने सपनों को साकार करने की दिशा में ठोस कदम उठाने का!
+
+Like ❤️ share and follow as an energy exchange.
+ 
+You can book a Personal Reading.
+
+Follow in Astrotalk app. Astrotalk ID is "Sumann"
+      </div>
+    </div>
+
+    <div class="flex flex-col justify-center items-center mt-10 font-grotesk">
+        <h1 id="hero" class="mb-6 cursor-pointer font-bold text-3xl tracking-tight font-grotesk text-red-600 uppercase animate-[pulseFast_1s_infinite]">Today's Horoscope is Live!</h1>
         <h5 class="text-sm text-center p-1 font-semibold tracking-wide px-4 bg-opacity-50 h-fit w-fit bg-red-200 rounded-2xl text-[#CA5310]">Poet • Writer • Author • Social Scientist</h5>
-        <h1 class="text-center text-5xl font-mincho mt-8 mb-10 font-semibold">Manjusha <span class="text-orange-600">Mann</span></h1>
+        <h1 class="text-center text-5xl font-mincho mt-4 mb-10 font-semibold">Manjusha <span class="text-orange-600">Mann</span></h1>
         <h4 class="text-black text-center text-2xl">Certified Tarot Master, Tarot <br> Reader & Healer, Tarot Spell Master, Numerologist, Reiki Healer</h4>
         
         <div class="h-[22rem] w-[80%] md:w-[30vw] rounded-lg">
@@ -214,8 +239,7 @@
         <h1 class="font-grotesk text-center mt-16 mb-16">© 2025 . All rights reserved.</h1>  
     </footer>
       
-      
-      
+    <script src="./js/reel.js" defer></script>
     <script src="./js/reviews.js" defer></script>
     <script src="./js/cards.js" defer></script>
     <script type="application/ld+json">
