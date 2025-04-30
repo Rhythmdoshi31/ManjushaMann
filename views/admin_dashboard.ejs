@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin | DashBoard</title>
-    <link rel="icon" href="/images/logo.png" type="image/x-icon">
+    <link rel="icon" href="/images/logo.webp" type="image/x-icon">
     <link href="/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css">
 </head>
 <body class="bg-[#FFEDD0]">
     <header class="h-[9vh] bg-[#0B2027] w-full md:w-[50vw] md:mx-auto flex items-center justify-between px-6">
         <div class="flex justify-center">
-            <img loading="lazy" src="/images/logo.png" alt="Something" class="object-cover h-12 w-12 mb-1">
+            <img loading="lazy" src="/images/logo.webp" alt="Something" class="object-cover h-12 w-12 mb-1">
             <h5 class="text-xl font-grotesk pt-3 text-gray-100 font-semibold">Manjusha Mann</h5>
         </div>
         <div>
@@ -66,6 +66,11 @@
           </button>
         </div>
       </form>
+      <div class="w-[80vw] mt-4 py-4 px-5 border-2 border border-black rounded-lg">
+        <h1 class="text-2xl tracking-wide font-semibold mb-2">Today's site visits : <span class="text-red-400 font-grotesk"><%= todaysVisits.count %></span></h1>
+        <hr class="mb-2 bg-black">
+        <h1 class="text-2xl tracking-wide font-semibold">Yesterday's site visits : <span class="text-red-400 font-grotesk"><%= yesterdaysVisits.count %></span></h1>
+      </div>
     </div>
   </div>
   

@@ -5,6 +5,7 @@ const { isLoggedIn } = require("../middlewares/isLoggedIn");
 const upload = require('../utils/multer');
 const adminModel = require("../models/adminModel");
 const { checkCookie } = require("../middlewares/checkCookie");
+const visitModel = require("../models/visitModel");
 
 router.get("/register", (req, res) => {
     res.send("This page is Restricted !");
@@ -17,7 +18,15 @@ router.get("/login", checkCookie, function (req, res) {
 router.post("/login", loginUser);
 
 router.get("/dashboard", isLoggedIn, async (req, res) => {
-    res.render("admin_dashboard"); 
+  const today = new Date().toISOString().split('T')[0];
+
+  const yesterday = new Date();
+  yesterday.setDate(yesterday.getDate() - 1);
+  const formatted = yesterday.toISOString().split('T')[0];
+
+  let todaysVisits = await visitModel.findOne({ date: today});
+  let yesterdaysVisits = await visitModel.findOne({ date: formatted});
+  res.render("admin_dashboard", { todaysVisits, yesterdaysVisits }); 
 });
 
 router.post('/upload', isLoggedIn, upload.single('video'), async (req, res) => {
