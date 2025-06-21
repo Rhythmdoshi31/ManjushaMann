@@ -12,11 +12,14 @@ router.get("/register", (req, res) => {
 });
 
 // In your route file (e.g., authRoutes.js)
-res.cookie("token", token, {
-  maxAge: 30 * 24 * 60 * 60 * 1000,
-  httpOnly: true,
-  secure: process.env.NODE_ENV === 'production',
-  sameSite: 'lax', // or 'strict'
+router.get('/logout', (req, res) => {
+  res.clearCookie('token', {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: 'lax' // or match whatever you used in res.cookie
+  });
+
+  res.redirect('/login'); // or any other page
 });
 
 
