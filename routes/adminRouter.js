@@ -12,10 +12,13 @@ router.get("/register", (req, res) => {
 });
 
 // In your route file (e.g., authRoutes.js)
-router.get('/logout', (req, res) => {
-  res.clearCookie('token'); // Remove the cookie named 'token'
-  res.redirect('/login');   // Or wherever you want to send them
+res.cookie("token", token, {
+  maxAge: 30 * 24 * 60 * 60 * 1000,
+  httpOnly: true,
+  secure: process.env.NODE_ENV === 'production',
+  sameSite: 'lax', // or 'strict'
 });
+
 
 
 router.get("/login", checkCookie, function (req, res) {
