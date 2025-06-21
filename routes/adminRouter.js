@@ -11,6 +11,13 @@ router.get("/register", (req, res) => {
     res.send("This page is Restricted !");
 });
 
+// In your route file (e.g., authRoutes.js)
+router.get('/logout', (req, res) => {
+  res.clearCookie('token'); // Remove the cookie named 'token'
+  res.redirect('/login');   // Or wherever you want to send them
+});
+
+
 router.get("/login", checkCookie, function (req, res) {
     res.render("admin_login");
 });
