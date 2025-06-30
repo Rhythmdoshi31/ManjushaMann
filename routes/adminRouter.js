@@ -19,7 +19,7 @@ router.get('/logout', (req, res) => {
     sameSite: 'lax' // or match whatever you used in res.cookie
   });
 
-  res.redirect('/login'); // or any other page
+  res.redirect('/'); // or any other page
 });
 
 
